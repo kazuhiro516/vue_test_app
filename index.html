@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+  <!-- リアルDOM -->
+  <!-- <a id="google_link">googleへのリンク</a> -->
+
+  <div id="app">
+    {{ message }}
+    <a :href="google">googleのリンク</a>
+    <a :href="book.url">{{ book.title }}</a>
+  </div>
+
+  <script>
+    let app = new Vue({
+      el: '#app',  // 仮想DOM
+      data(){
+        return {
+          message: 'Hello Vue!',
+          google: 'https://google.com',
+          book: {
+            title: '本のタイトル',
+            url: 'https://google.com'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
