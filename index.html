@@ -14,8 +14,13 @@
 </head>
 <body>
   <div id="app"> <!--仮想DOM -->
-    <div :style="{fontSize:fontSize}">スタイルテスト</div>
-    <div :class="{active:isActive}">クラスのテキスト</div>
+    <div v-show="isDisplay">メッセージが届いています</div>
+    <div v-show="!isDisplay">falseになっています</div>
+
+    <div v-if="signal === 'red'">赤色です</div>
+    <div v-else-if="signal === 'yellow'">黄色です</div>
+    <div v-else-if="signal === 'blue'">青色です</div>
+    <div v-else>何ものでもありません</div>
   </div>
 
   <script>
@@ -23,8 +28,8 @@
       el: '#app',  // 仮想DOM
       data(){
         return {
-          fontSize: '20px',
-          isActive: true
+          isDisplay:true,
+          signal: 'red'
         }
       }
     })
