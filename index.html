@@ -17,23 +17,10 @@
   </div>
 
   <script>
-    let app = new Vue({
-      el: '#app',  // 仮想DOM
-      data(){
-        return {
-          test: 'テストデータ'
-        }
-      },
-      created(){
-        console.log('created')
-        console.log(this.$el)
-        console.log(this.test)
-      },
-      mounted(){
-        console.log('mounted')
-        console.log(this.$el)
-      }
-    })
+    new Vue({
+      template: '<p>{{ msg }}</p>',
+      data: { msg: 'hello world!' }
+    }).$mount('#app')
   </script>
 </body>
 </html>
