@@ -14,13 +14,34 @@
 </head>
 <body>
   <div id="app"> <!--仮想DOM -->
+    <p>{{ items[0].name }}</p>
   </div>
 
   <script>
-    new Vue({
-      template: '<p>{{ msg }}</p>',
-      data: { msg: 'hello world!' }
-    }).$mount('#app')
+    var items = [
+      {
+        name: '鉛筆',
+        price: 300,
+        quantity: 0
+      },
+      {
+        name: 'ノート',
+        price: 400,
+        quantity: 0
+      },
+      {
+        name: '消しゴム',
+        price: 500,
+        quantity: 0
+      }
+    ]
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        items: items
+      }
+    })
   </script>
 </body>
 </html>
