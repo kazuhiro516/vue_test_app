@@ -15,6 +15,9 @@
 <body>
   <div id="app"> <!--仮想DOM -->
     <p>{{ items[0].name }}</p>
+    <button id="b-button" :title="loggedInButton">
+      購入
+    </button>
   </div>
 
   <script>
@@ -39,7 +42,8 @@
     var vm = new Vue({
       el: '#app',
       data: {
-        items: items
+        items: items,
+        loggedInButton: 'ログイン済みのため購入できます'
       }
     })
   </script>
